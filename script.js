@@ -7,7 +7,7 @@
 // let activityType 
 
 function getActivity(type) {
-    fetch(`https://www.boredapi.com//api/activity?type=${type}`, {
+    fetch(`https://www.boredapi.com/api/activity?type=${type}`, {
         method: 'GET',
         headers: {
             'Accept': 'application/json'
