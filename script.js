@@ -4,8 +4,6 @@
 //     e.preventDefault()
 // }
 
-// let activityType 
-
 function getActivity(type) {
     fetch(`https://www.boredapi.com/api/activity?type=${type}`, {
         method: 'GET',
@@ -15,9 +13,7 @@ function getActivity(type) {
         body: JSON.stringify()
     })
     .then(res => res.json())
-    .then(data => {
-        // activityType = data
-        console.log(data)
+    .then(data => {renderActivity(data)
     })
 }
 
@@ -35,6 +31,26 @@ function handleSearch(e) {
 }
 
 
-// function renderActivity(activity) {
+function renderActivity(activity) {
+    const result = document.createElement('li')
+    result.classname = 'activity'
+    result.innerHTML = `
+    Activity: ${activity.activity} <br/>
+    Type: ${activity.type} <br/>
+    Price: ${activity.price} <br/>
+    Number of Participants: ${activity.participants} <br/>
+    <br/>
+    `
+    const activities = document.querySelector('#activities')
+    activities.append(result)
+}
 
+// function activityError() {
+
+// }
+
+// if (activity exists){
+//     renderActivity(data)
+// } else {
+//    activityError()
 // }
