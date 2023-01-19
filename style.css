@@ -3,6 +3,11 @@ body {
     text-align: center;
     background-image: url('https://img.freepik.com/free-vector/blank-white-notepaper-design-vector_53876-161340.jpg?w=2000');
     background-size: 1160px;
+    font-family: "Courier New";
+}
+
+p {
+    font-weight: bold;
 }
 
 ul {
@@ -30,4 +35,8 @@ div#activities-container{
     background-color: bisque;
     margin-left: 50px;
     margin-right: 50px
+}
+
+div#activities-container {
+    font-weight: bold;
 }
