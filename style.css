@@ -1,0 +1,33 @@
+body {
+    background-color: rgba(114, 174, 206, 0.643);
+    text-align: center;
+    background-image: url('https://img.freepik.com/free-vector/blank-white-notepaper-design-vector_53876-161340.jpg?w=2000');
+    background-size: 1160px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10;
+    text-align: left-center;
+}
+
+div#header{
+    background-color: rgb(170, 129, 209);
+    margin-bottom: 0px;
+    padding: 10px;
+    margin-left: 122px;
+    margin-right: 122px;
+}
+div#main {
+    background-color: aquamarine;
+    padding: 20px;
+    margin-left: 122px;
+    margin-right: 122px;
+}
+
+div#activities-container{
+    background-color: bisque;
+    margin-left: 50px;
+    margin-right: 50px
+}

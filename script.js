@@ -13,14 +13,14 @@ function getActivity(type) {
         body: JSON.stringify()
     })
     .then(res => res.json())
-    .then(data => {renderActivity(data)
+    .then(data => {
+       renderActivity(data)
     })
 }
-
+// clear previous data when submit is clicked again
 
 let search = document.querySelector('#activity-search');
 search.addEventListener('submit', handleSearch)
-
 
 function handleSearch(e) {
     e.preventDefault()
@@ -28,6 +28,10 @@ function handleSearch(e) {
     let type = input.value
     console.log(type)
     getActivity(type)
+    // for (i = 0; i < 5; i++) {
+    //     getActivity(type)
+    //     }
+    //  if activity id exists, dont return it again
 }
 
 
@@ -37,7 +41,6 @@ function renderActivity(activity) {
     result.innerHTML = `
     Activity: ${activity.activity} <br/>
     Type: ${activity.type} <br/>
-    Price: ${activity.price} <br/>
     Number of Participants: ${activity.participants} <br/>
     <br/>
     `
@@ -45,12 +48,4 @@ function renderActivity(activity) {
     activities.append(result)
 }
 
-// function activityError() {
-
-// }
-
-// if (activity exists){
-//     renderActivity(data)
-// } else {
-//    activityError()
-// }
+// crrate a function that allows search to be case insensitive
