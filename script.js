@@ -27,10 +27,9 @@ function handleSearch(e) {
     const input = document.querySelector('#search')
     let type = input.value
     console.log(type)
-    getActivity(type)
-    // for (i = 0; i < 5; i++) {
-    //     getActivity(type)
-    //     }
+    for (i = 0; i < 5; i++) {
+        getActivity(type)
+        }
     //  if activity id exists, dont return it again
 }
 
