@@ -1,7 +1,3 @@
-
-// crrate a function that allows search to be case insensitive
-
-
 function getActivity(type) {
     fetch(`https://www.boredapi.com/api/activity?type=${type}`, {
         method: 'GET',
@@ -19,12 +15,9 @@ function getActivity(type) {
         }
     })
     }
-// clear previous data when submit is clicked again
-
 
 let search = document.querySelector('#activity-search');
 search.addEventListener('submit', handleSearch)
-
 
 function handleSearch(e) {
     e.preventDefault()
@@ -32,15 +25,16 @@ function handleSearch(e) {
     let type = input.value.toLowerCase()
     let dropDown = document.querySelector('#activitiesamount')
     let amountofActivities = dropDown.value
-    console.log(amountofActivities)
     for (let i = 0; i < amountofActivities; i++) {
         getActivity(type)
     }
+    clearInput()
 }
 
+let result 
 
 function renderActivity(activity) {
-    const result = document.createElement('li')
+    result = document.createElement('li')
     result.classname = 'activity'
     result.innerHTML = `
     <div class="card">
@@ -60,6 +54,7 @@ function renderActivity(activity) {
     result.querySelector('#btn').addEventListener('click', () => result.remove())
 }
 
-// I’m running into an issue with the API i’m accessing. when I make a request to GET information from the API, it only sends back one bit of info as a randomizer.  Is there some way to access 
-
+function clearInput() {
+    document.querySelector('#activity-search').reset()
+}
 
