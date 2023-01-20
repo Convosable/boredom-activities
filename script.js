@@ -11,8 +11,14 @@ function getActivity(type) {
         body: JSON.stringify()
     })
     .then(res => res.json())
-    .then(data => renderActivity(data))
-}
+    .then(data => {
+        if (data.activity === undefined){
+            alert("No activities match the search request. Try using one of the availble search types.") 
+        } else {
+            renderActivity(data)
+        }
+    })
+    }
 // clear previous data when submit is clicked again
 
 
@@ -24,12 +30,10 @@ function handleSearch(e) {
     e.preventDefault()
     const input = document.querySelector('#search')
     let type = input.value.toLowerCase()
-    
-    console.log(type)
     // for (i = 0; i < 5; i++) {
-    //     getActivity(type)
-    //     }
-    getActivity(type)
+        getActivity(type)
+        // }
+    // getActivity(type)
     //  if activity id exists, dont return it again
 }
 
@@ -47,4 +51,3 @@ function renderActivity(activity) {
     activities.append(result)
 
 }
-
