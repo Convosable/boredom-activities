@@ -30,11 +30,12 @@ function handleSearch(e) {
     e.preventDefault()
     const input = document.querySelector('#search')
     let type = input.value.toLowerCase()
-    // for (i = 0; i < 5; i++) {
+    let dropDown = document.querySelector('#activitiesamount')
+    let amountofActivities = dropDown.value
+    console.log(amountofActivities)
+    for (let i = 0; i < amountofActivities; i++) {
         getActivity(type)
-        // }
-    // getActivity(type)
-    //  if activity id exists, dont return it again
+    }
 }
 
 
@@ -57,8 +58,6 @@ function renderActivity(activity) {
     activities.append(result)
 
     result.querySelector('#btn').addEventListener('click', () => result.remove())
-
-
 }
 
 // I’m running into an issue with the API i’m accessing. when I make a request to GET information from the API, it only sends back one bit of info as a randomizer.  Is there some way to access 
