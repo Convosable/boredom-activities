@@ -42,12 +42,21 @@ function renderActivity(activity) {
     const result = document.createElement('li')
     result.classname = 'activity'
     result.innerHTML = `
-    Activity: ${activity.activity} <br/>
-    Type: ${activity.type} <br/>
-    Number of Participants: ${activity.participants} <br/>
-    <br/>
+    <div class="card">
+        <div class="container">
+            <br/>
+            <h3>Activity:</h3> <p>${activity.activity}</p></h4><br/>
+            <h3>Type:</h3> <p>${activity.type}</p></h4><br/>
+            <h3>Participants:</h3> <p>${activity.participants}</p></h4><br/>
+            <br/>
+        </div>
+    </div>
     `
     const activities = document.querySelector('#activities')
     activities.append(result)
 
 }
+
+// I’m running into an issue with the API i’m accessing. when I make a request to GET information from the API, it only sends back one bit of info as a randomizer.  Is there some way to access 
+
+
