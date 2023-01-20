@@ -49,11 +49,15 @@ function renderActivity(activity) {
             <h3>Type:</h3> <p>${activity.type}</p></h4><br/>
             <h3>Participants:</h3> <p>${activity.participants}</p></h4><br/>
             <br/>
+            <button id='btn'>Remove</button>
         </div>
     </div>
     `
     const activities = document.querySelector('#activities')
     activities.append(result)
+
+    result.querySelector('#btn').addEventListener('click', () => result.remove())
+
 
 }
 
