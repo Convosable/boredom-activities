@@ -1,3 +1,4 @@
+let array =[]
 function getActivity(type) {
     fetch(`https://www.boredapi.com/api/activity?type=${type}`, {
         method: 'GET',
@@ -11,13 +12,15 @@ function getActivity(type) {
         if (data.activity === undefined){
             alert("No activities match the search request. Try using one of the availble search types.") 
         } else {
-            renderActivity(data)
+            array.push(data)
+            console.log(data)
         }
     })
-    }
+}
 
 let search = document.querySelector('#activity-search');
 search.addEventListener('submit', handleSearch)
+
 
 function handleSearch(e) {
     e.preventDefault()
@@ -29,7 +32,7 @@ function handleSearch(e) {
         getActivity(type)
     }
     clearInput()
-}
+    }
 
 let result 
 
@@ -37,21 +40,23 @@ function renderActivity(activity) {
     result = document.createElement('li')
     result.classname = 'activity'
     result.innerHTML = `
-    <div class="card">
         <div class="container">
             <br/>
-            <h3>Activity:</h3> <p>${activity.activity}</p></h4><br/>
-            <h3>Type:</h3> <p>${activity.type}</p></h4><br/>
-            <h3>Participants:</h3> <p>${activity.participants}</p></h4><br/>
+            <h3>Activity:</h3> 
+            <p>${activity.activity}</p>
+            <h3>Type:</h3> 
+            <p>${activity.type}</p>
+            <h3>Participants:</h3> 
+            <p>${activity.participants}</p>
             <br/>
-            <button id='btn'>Remove</button>
+            <button class='btn'>Remove</button> 
+            <br/>
         </div>
-    </div>
     `
     const activities = document.querySelector('#activities')
     activities.append(result)
 
-    result.querySelector('#btn').addEventListener('click', () => result.remove())
+    result.querySelector('.btn').addEventListener('click', () => result.remove())
 }
 
 function clearInput() {
