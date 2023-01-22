@@ -36,6 +36,9 @@ function handleSearch(e) {
 
 let result 
 
+let showResults = document.querySelector('#show')
+showResults.addEventListener('click', displayResults)
+
 function renderActivity(activity) {
     result = document.createElement('li')
     result.classname = 'activity'
