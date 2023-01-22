@@ -39,6 +39,10 @@ let result
 let showResults = document.querySelector('#show')
 showResults.addEventListener('click', displayResults)
 
+function displayResults() {
+    array.forEach(activity => renderActivity(activity))
+}
+
 function renderActivity(activity) {
     result = document.createElement('li')
     result.classname = 'activity'
