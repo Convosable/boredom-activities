@@ -40,7 +40,11 @@ let showResults = document.querySelector('#show')
 showResults.addEventListener('click', displayResults)
 
 function displayResults() {
+    if (array.length < 1){
+        alert('Submit an activity type first!')
+    } else {
     array.forEach(activity => renderActivity(activity))
+    }
 }
 
 function renderActivity(activity) {
