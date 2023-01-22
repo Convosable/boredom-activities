@@ -44,6 +44,7 @@ function displayResults() {
         alert('Submit an activity type first!')
     } else {
     array.forEach(activity => renderActivity(activity))
+    array.pop()
     }
 }
 
