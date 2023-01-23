@@ -14,6 +14,7 @@ let result
             if (data.activity === undefined){
                 alert("No activities match the search request. Try using one of the availble search types.") 
             } else {
+                array.push(data)
             }
         })
     }
@@ -74,14 +75,3 @@ removeAll.addEventListener('click', () => {
     let allActivities = document.querySelector('#activities')
     allActivities.innerHTML = ''
 })
-
-
-
-
-
-
-
-
-
-
-
