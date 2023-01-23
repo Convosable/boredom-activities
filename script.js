@@ -27,11 +27,11 @@ search.addEventListener('submit', handleSearch)
 function handleSearch(e) {
     e.preventDefault()
     const input = document.querySelector('#search')
-    let type = input.value.toLowerCase()
+    let inputValue = input.value.toLowerCase()
     let dropDown = document.querySelector('#activitiesamount')
     let amountofActivities = dropDown.value
     for (let i = 0; i < amountofActivities; i++) {
-        getActivity(type)
+        getActivity(inputValue)
     }
     clearInput()
     }
