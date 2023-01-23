@@ -75,3 +75,13 @@ removeAll.addEventListener('click', () => {
     allActivities.innerHTML = ''
 })
 
+
+
+
+
+
+
+
+
+
+
