@@ -1,4 +1,6 @@
 let array =[]
+let result
+
 function getActivity(type) {
     fetch(`https://www.boredapi.com/api/activity?type=${type}`, {
         method: 'GET',
@@ -34,7 +36,7 @@ function handleSearch(e) {
     clearInput()
     }
 
-let result 
+
 
 let showResults = document.querySelector('#show')
 showResults.addEventListener('click', displayResults)
@@ -48,30 +50,32 @@ function displayResults() {
     }
 }
 
+let removeAll = document.querySelector('#removeAll')
+removeAll.addEventListener('click', () => {
+    let allActivities = document.querySelector('#activities')
+    allActivities.innerHTML = ''
+    console.log('clicked')
+})
+
 function renderActivity(activity) {
     result = document.createElement('li')
     result.classname = 'activity'
     result.innerHTML = `
-        <div class="container">
-            <br/>
-            <h3>Activity:</h3> 
-            <p>${activity.activity}</p>
-            <h3>Type:</h3> 
-            <p>${activity.type}</p>
-            <h3>Participants:</h3> 
-            <p>${activity.participants}</p>
-            <br/>
-            <button class='btn'>Remove</button> 
-            <br/>
+        <div class="container" id = ${activity.key}>
+        <br/>
+        <h3>Activity:</h3> 
+        <p>${activity.activity}</p>
+        <h3>Type:</h3> 
+        <p>${activity.type}</p>
+        <h3>Participants:</h3> 
+        <p>${activity.participants}</p>
+        <br/>
         </div>
     `
     const activities = document.querySelector('#activities')
     activities.append(result)
-
-    result.querySelector('.btn').addEventListener('click', () => result.remove())
 }
 
 function clearInput() {
     document.querySelector('#activity-search').reset()
 }
-
