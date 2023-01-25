@@ -28,8 +28,12 @@ search.addEventListener('submit', handleSearch)
         const input = document.querySelector('#search')
         let inputValue = input.value.toLowerCase()
         let dropdownValue = document.querySelector('#activitiesamount').value
-        for (let i = 0; i < dropdownValue; i++) {
-            getActivity(inputValue)
+        if (inputValue === '') {
+            alert ("Please enter a search type.")
+        } else {
+            for (let i = 0; i < dropdownValue; i++) {
+                getActivity(inputValue)
+            }
         }
         clearInput()
         }
