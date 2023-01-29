@@ -1,8 +1,10 @@
 let array =[]
 let result
 
-    function getActivity(type) {
-        fetch(`https://www.boredapi.com/api/activity?type=${type}`, {
+document.addEventListener('DOMContentLoaded', getActivities)
+
+    function getActivities() {
+        fetch(`http://localhost:3000/activities`, {
             method: 'GET',
             headers: {
                 'Accept': 'application/json'
@@ -10,15 +12,9 @@ let result
             body: JSON.stringify()
         })
         .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            if (data.activity === undefined){
-                alert("No activities match the search request. Try using one of the availble search types.") 
-            } else {
-                array.push(data)
-            }
-        })
+        .then(data => console.log(data))
     }
+
 
 let search = document.querySelector('#activity-search');
 search.addEventListener('submit', handleSearch)
