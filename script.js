@@ -22,16 +22,16 @@ document.addEventListener('DOMContentLoaded', getActivities)
 let search = document.querySelector('#activity-search');
 search.addEventListener('submit', handleSearch)
 
+// need to add an if else (input value === anything but an activity type)
 
     function handleSearch(e) {
         e.preventDefault()
         const input = document.querySelector('#search')
         let inputValue = input.value.toLowerCase()
-        let dropdownValue = document.querySelector('#activitiesamount').value
         if (inputValue === '') {
             alert ("Please enter a search type.")
         } else {
-            let  correctActivities = activities.filter(activity => activity.type === inputValue)
+            let correctActivities = activities.filter(activity => activity.type === inputValue)
             correctActivities.forEach(activity => renderActivity(activity))
         }
         clearInput()
@@ -41,17 +41,6 @@ search.addEventListener('submit', handleSearch)
         document.querySelector('#activity-search').reset()
     }
     
-let showResults = document.querySelector('#show')
-showResults.addEventListener('click', displayResults)
-
-    function displayResults() {
-        if (array.length < 1){
-            alert('Submit an activity type first!')
-        } else {
-        array.length = 0
-        }
-    }
-
     function renderActivity(activity) {
         result = document.createElement('li')
         result.classname = 'activity'
