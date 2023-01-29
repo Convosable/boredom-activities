@@ -1,4 +1,4 @@
-let array =[]
+let activities
 let result
 
 document.addEventListener('DOMContentLoaded', getActivities)
@@ -12,7 +12,10 @@ document.addEventListener('DOMContentLoaded', getActivities)
             body: JSON.stringify()
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            console.log(data)
+            activities = data
+        })
     }
 
 
@@ -28,9 +31,8 @@ search.addEventListener('submit', handleSearch)
         if (inputValue === '') {
             alert ("Please enter a search type.")
         } else {
-            for (let i = 0; i < dropdownValue; i++) {
-                getActivity(inputValue)
-            }
+            let  correctActivities = activities.filter(activity => activity.type === inputValue)
+            correctActivities.forEach(activity => renderActivity(activity))
         }
         clearInput()
         }
@@ -46,7 +48,6 @@ showResults.addEventListener('click', displayResults)
         if (array.length < 1){
             alert('Submit an activity type first!')
         } else {
-        array.forEach(activity => renderActivity(activity))
         array.length = 0
         }
     }
@@ -66,8 +67,8 @@ showResults.addEventListener('click', displayResults)
             <br/>
             </div>
         `
-        const activities = document.querySelector('#activities')
-        activities.append(result)
+        const activitiesList = document.querySelector('#activities')
+        activitiesList.append(result)
     }
 
 let removeAll = document.querySelector('#removeAll')
