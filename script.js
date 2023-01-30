@@ -57,7 +57,6 @@ search.addEventListener('submit', handleSearch)
     
     function renderActivity(activity) {
         result = document.createElement('li')
-        result.classname = 'activity'
         result.innerHTML = `
             <div class="container" id = 1++>
             <br/>
