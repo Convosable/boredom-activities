@@ -13,15 +13,12 @@ document.addEventListener('DOMContentLoaded', getActivities)
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             activities = data
         })
     }
 
 let search = document.querySelector('#activity-search');
 search.addEventListener('submit', handleSearch)
-
-// need to add an if else (input value === anything but an activity type)
 
     function handleSearch(e) {
         e.preventDefault()
@@ -30,7 +27,6 @@ search.addEventListener('submit', handleSearch)
         let correctActivities = activities.filter(activity => activity.type === inputValue)
         if (inputValue === '') {
             alert ("Please enter a search type.")
-            console.log(activities[inputValue])
         } else if (inputValue === 'education') {
             correctActivities.forEach(activity => renderActivity(activity))
         } else if (inputValue === 'recreational') {
