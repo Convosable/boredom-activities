@@ -15,4 +15,6 @@ ex) hang out with friends at the beach, grab a drink with a friend, etc.
 
 ## Acknowledgements
 
-A db.json file was created using the data frpom the Bored API.  Then a mock server is ran to access the data. 
+Bored API 
+
+Since no endpoint was available for all the data in the Bored API, I created a db.json file to store their data locally.
