@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', getActivities)
         })
     }
 
-
 let search = document.querySelector('#activity-search');
 search.addEventListener('submit', handleSearch)
 
@@ -28,11 +27,30 @@ search.addEventListener('submit', handleSearch)
         e.preventDefault()
         const input = document.querySelector('#search')
         let inputValue = input.value.toLowerCase()
+        let correctActivities = activities.filter(activity => activity.type === inputValue)
         if (inputValue === '') {
             alert ("Please enter a search type.")
-        } else {
-            let correctActivities = activities.filter(activity => activity.type === inputValue)
+            console.log(activities[inputValue])
+        } else if (inputValue === 'education') {
             correctActivities.forEach(activity => renderActivity(activity))
+        } else if (inputValue === 'recreational') {
+            correctActivities.forEach(activity => renderActivity(activity))
+        } else if (inputValue === 'social') {
+            correctActivities.forEach(activity => renderActivity(activity))
+        } else if (inputValue === 'diy') {
+            correctActivities.forEach(activity => renderActivity(activity))
+        } else if (inputValue === 'charity') {
+            correctActivities.forEach(activity => renderActivity(activity))
+        } else if (inputValue === 'cooking') {
+            correctActivities.forEach(activity => renderActivity(activity))
+        } else if (inputValue === 'relaxation') {
+            correctActivities.forEach(activity => renderActivity(activity))
+        } else if (inputValue === 'music') {
+            correctActivities.forEach(activity => renderActivity(activity))
+        } else if (inputValue === 'busywork') {
+            correctActivities.forEach(activity => renderActivity(activity))
+        } else {
+             alert("Please enter a valid activity type.")
         }
         clearInput()
         }
@@ -45,7 +63,7 @@ search.addEventListener('submit', handleSearch)
         result = document.createElement('li')
         result.classname = 'activity'
         result.innerHTML = `
-            <div class="container" id = ${activity.key}>
+            <div class="container" id = 1++>
             <br/>
             <h3>Activity:</h3> 
             <p>${activity.activity}</p>
@@ -57,8 +75,9 @@ search.addEventListener('submit', handleSearch)
             </div>
         `
         const activitiesList = document.querySelector('#activities')
-        activitiesList.append(result)
+        activitiesList.append(result)    
     }
+
 
 let removeAll = document.querySelector('#removeAll')
 removeAll.addEventListener('click', () => {
