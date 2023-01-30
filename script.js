@@ -74,13 +74,29 @@ search.addEventListener('submit', handleSearch)
         activitiesList.append(result)    
     }
 
-let boredom = document.querySelector('h1')
-boredom.addEventListener('mouseover', () => {
-    boredom.style.backgroundColor = 'orange'
-})
-
 let removeAll = document.querySelector('#removeAll')
 removeAll.addEventListener('click', () => {
     let allActivities = document.querySelector('#activities')
     allActivities.innerHTML = ''
+})
+
+let darkmode = document.querySelector('#darkmode')
+darkmode.addEventListener('mouseover', () => {
+    let header = document.querySelector('#header')
+    header.style.backgroundColor = '#503E62'
+    let main = document.querySelector('#main')
+    main.style.backgroundColor = '#3E8383'
+    let body = document.querySelector('body')
+    body.style.backgroundImage = 'url(https://media.istockphoto.com/id/1209030907/vector/abstract-triangular-background.jpg?s=612x612&w=0&k=20&c=WL6sXFy_wr1z7Yk_lPbJ2Zhd2EjoM1eomgCN8C05Q6U=)'
+})
+
+let lightmode = document.querySelector('#lightmode')
+lightmode.addEventListener('mouseover', () => {
+    let header = document.querySelector('#header')
+    header.style.backgroundColor = 'rgb(170, 129, 209)'
+    let main = document.querySelector('#main')
+    main.style.backgroundColor = 'aquamarine'
+    let body = document.querySelector('body')
+    body.style.backgroundImage = 'url(https://img.freepik.com/free-vector/blank-white-notepaper-design-vector_53876-161340.jpg?w=2000)'
+
 })
