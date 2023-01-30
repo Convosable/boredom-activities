@@ -78,6 +78,10 @@ search.addEventListener('submit', handleSearch)
         activitiesList.append(result)    
     }
 
+let boredom = document.querySelector('h1')
+boredom.addEventListener('mouseover', () => {
+    boredom.style.backgroundColor = 'orange'
+})
 
 let removeAll = document.querySelector('#removeAll')
 removeAll.addEventListener('click', () => {
