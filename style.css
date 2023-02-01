@@ -16,8 +16,6 @@ ul {
     text-align: center;
 }
 
-/* rgb(170, 129, 209 */
-
 div#header{
     background-color: rgb(170, 129, 209);
     margin-bottom: 0px;
@@ -25,6 +23,7 @@ div#header{
     margin-left: 122px;
     margin-right: 170px;
 }
+
 div#main {
     background-color: aquamarine;
     padding: 20px;
